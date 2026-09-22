@@ -1,34 +1,31 @@
-/* Handy Colors */
+/* NeverType Colors */
 
 :root {
   /* Palette source of truth. Each themed color is defined once as a
      light/dark pair; the active tokens below and the `data-theme` overrides
-     in App.css reference these, so a hex value lives in exactly one place. */
-  --light-color-text: #0f0f0f;
-  --light-color-background: #fbfbfb;
-  --light-color-logo-primary: #faa2ca;
-  --light-color-logo-stroke: #382731;
+     reference these, so a hex value lives in exactly one place. */
+  --light-color-text: #0f172a;
+  --light-color-background: #ffffff;
+  --light-color-logo-primary: #2563eb;
+  --light-color-logo-stroke: #1e3a8a;
 
-  --dark-color-text: #fbfbfb;
-  --dark-color-background: #2c2b29;
-  --dark-color-logo-primary: #f28cbb;
-  --dark-color-logo-stroke: #fad1ed;
+  --dark-color-text: #f1f5f9;
+  --dark-color-background: #0f172a;
+  --dark-color-logo-primary: #3b82f6;
+  --dark-color-logo-stroke: #93c5fd;
 
-  /* Semantic status colors. First used by SecureInputWarning; intended to
-     replace the ad-hoc yellow-500/red-500 usages (e.g. ui/Alert.tsx) over
-     time so status styling is themeable from one place. */
+  /* Semantic status colors */
   --light-color-warning: #d97706;
   --light-color-error: #dc2626;
   --dark-color-warning: #fbbf24;
   --dark-color-error: #f87171;
 
   /* Tokens that do not change between light and dark */
-  --color-background-ui: #da5893;
-  --color-text-stroke: #f6f6f6;
-  --color-mid-gray: #808080;
+  --color-background-ui: #2563eb;
+  --color-text-stroke: #f8fafc;
+  --color-mid-gray: #94a3b8;
 
-  /* Active palette — defaults to light, follows the OS via the media query
-     below, or is forced by `data-theme` (see the overrides below). */
+  /* Active palette — defaults to light */
   --color-text: var(--light-color-text);
   --color-background: var(--light-color-background);
   --color-logo-primary: var(--light-color-logo-primary);
@@ -51,12 +48,10 @@
 /*
  * Explicit theme override, driven by the `theme` setting via
  * `document.documentElement.dataset.theme`. When set, the higher-specificity
- * attribute selectors win over the `prefers-color-scheme` media query above,
- * so a user can keep Handy light or dark regardless of the OS setting.
+ * attribute selectors win over the `prefers-color-scheme` media query above.
  * `system` (or no attribute) leaves the OS in charge.
  *
- * Lives here (not in App.css) so every window that imports the shared palette —
- * the settings window and the recording overlay alike — honours the override.
+ * Lives here so every window that imports the shared palette honours the override.
  */
 :root[data-theme="light"] {
   --color-text: var(--light-color-text);
